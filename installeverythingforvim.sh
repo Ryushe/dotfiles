@@ -21,13 +21,49 @@ else
 	# Install Tpm
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	echo "Tpm has been installed."
+	sleep 2
 fi
 
-echo "We should do something about the .bashrc"
-echo "Moving the .bashrc to the home dir"
-sleep 2
-mv -f .bashrc ~
+# Check if gcc is installed
+echo "Checking if gcc is installed"
 
-echo "Im going to move .tmux.conf now"
-sleep 2
-mv -f .tmux.conf ~
+if command -v gcc &>/dev/null; then
+	echo "gcc is installed."
+	sleep 2
+else
+	echo "gcc is not installed."
+	sleep 2
+	sudo apt install -y gcc
+fi
+
+# Check if g++ is installed
+if command -v g++ &>/dev/null; then
+	echo "g++ is installed."
+else
+	echo "g++ is not installed."
+	sleep 2
+	echo "installing g++"
+	sudo apt install -y g++
+fi
+
+# Symbolic links for dot files
+filesToCheck=(".bashrc" ".tmux.conf")
+
+for file in "${filesToCheck[@]}"; do
+	filePath="$HOME/$file"
+	sourceFile="$PWD/$file"
+
+	if [ -e "$filePath" ]; then
+		echo "Found file $file. Removing..."
+		rm "$filePath"
+		sleep 2
+
+	else
+		echo "No file found for $file"
+	fi
+
+	echo "Creating a symbolic link for $file"
+	ln -s "$sourceFile" "$filePath"
+	sleep 2
+
+done
