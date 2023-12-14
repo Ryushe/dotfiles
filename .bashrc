@@ -180,3 +180,4 @@ if [ -f "$github_ssh_key" ]; then
 		ssh-add "$github_ssh_key"
 	fi
 fi
+: undercover && export PS1='C:${PWD//\//\\\}> '
