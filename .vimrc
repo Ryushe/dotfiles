@@ -1,4 +1,4 @@
-set runtimepath +=~/configs/.vim
+set runtimepath +=~/configs/vimrc
 nnoremap <Enter> o <ESC>
 nnoremap <S-Enter> O <ESC>
 
@@ -6,6 +6,7 @@ nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap n nzzzv
 nnoremap N Nzzzv
+inoremap jk <ESC>
 
 map <C-c> "+y
 map <C-v> "+p

@@ -47,7 +47,7 @@ else
 fi
 
 # Symbolic links for dot files
-filesToCheck=(".bashrc" ".tmux.conf")
+filesToCheck=(".bashrc" ".tmux.conf" ".vimrc")
 
 for file in "${filesToCheck[@]}"; do
 	filePath="$HOME/$file"
