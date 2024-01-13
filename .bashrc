@@ -164,20 +164,7 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 # Created by `pipx` on 2023-10-24 07:27:09
 export PATH="$PATH:/home/lilpeenieweenie/.local/bin"
 
-# nvim paths
-#export NVIM_INIT_VIM=~/.vim/init.lua
-
 # snap path
 export PATH="$PATH:/snap/bin"
 
-# auto allow ssh access for github
-github_ssh_key="$HOME/ssh/github"
-# Check if the GitHub SSH key file exists
-if [ -f "$github_ssh_key" ]; then
-	# Check if SSH agent is running
-	if [ -z "$SSH_AUTH_SOCK" ]; then
-		eval "$(ssh-agent -s)"
-		ssh-add "$github_ssh_key"
-	fi
-fi
 : undercover && export PS1='C:${PWD//\//\\\}> '
