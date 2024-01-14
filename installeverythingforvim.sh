@@ -67,3 +67,7 @@ for file in "${filesToCheck[@]}"; do
 	sleep 2
 
 done
+
+echo "installing ohmyposh now"
+curl -s https://ohmyposh.dev/install.sh | bash -s
+

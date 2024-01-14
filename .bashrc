@@ -60,7 +60,7 @@ fi
 # These delimiters must not be modified. Thanks.
 # START KALI CONFIG VARIABLES
 PROMPT_ALTERNATIVE=twoline
-NEWLINE_BEFORE_PROMPT=yes
+#NEWLINE_BEFORE_PROMPT=yes
 # STOP KALI CONFIG VARIABLES
 
 if [ "$color_prompt" = yes ]; then
@@ -167,4 +167,4 @@ export PATH="$PATH:/home/lilpeenieweenie/.local/bin"
 # snap path
 export PATH="$PATH:/snap/bin"
 
-: undercover && export PS1='C:${PWD//\//\\\}> '
+eval "$(oh-my-posh init bash --config "~/configs/carver-ohmyposh.json")"
