@@ -71,3 +71,7 @@ done
 echo "installing ohmyposh now"
 curl -s https://ohmyposh.dev/install.sh | bash -s
 
+# notes:
+# oh-my-posh font install
+# install jetbrains mono
+# make sure shell is in bash not zsh
