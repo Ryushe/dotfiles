@@ -162,7 +162,7 @@ export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 # Created by `pipx` on 2023-10-24 07:27:09
-export PATH="$PATH:/home/lilpeenieweenie/.local/bin"
+export PATH="$PATH:/home/$USER/.local/bin"
 
 # snap path
 export PATH="$PATH:/snap/bin"
