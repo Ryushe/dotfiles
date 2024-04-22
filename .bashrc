@@ -171,9 +171,7 @@ export PATH="$PATH:/snap/bin"
 eval "$(oh-my-posh init bash --config "~/configs/carver-ohmyposh.json")"
 
 if [ -f $HOME/.ssh/github ]; then
-    eval $(keychain --eval github)
-    echo "github key added successfully"
-else
-    echo "github key not added"
+    keychain --eval github &>/dev/null
 fi
+
 

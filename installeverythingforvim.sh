@@ -68,8 +68,25 @@ for file in "${filesToCheck[@]}"; do
 
 done
 
-echo "installing ohmyposh now"
-curl -s https://ohmyposh.dev/install.sh | bash -s
+# Check if keychain is installed
+if command -v keychain &>/dev/null; then
+	echo "keychain is installed."
+else
+	echo "keychain is not installed."
+	sleep 2
+	echo "installing keychain"
+	sudo apt install -y keychain
+fi
+
+# Check if g++ is installed
+if command -v oh-my-posh &>/dev/null; then
+	echo "ohmyposh is installed."
+else
+	echo "ohmyposh is not installed."
+	sleep 2
+	echo "installing ohmyposh"
+    curl -s https://ohmyposh.dev/install.sh | bash -s
+fi
 
 # notes:
 # oh-my-posh font install
