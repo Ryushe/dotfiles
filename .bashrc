@@ -167,4 +167,13 @@ export PATH="$PATH:/home/$USER/.local/bin"
 # snap path
 export PATH="$PATH:/snap/bin"
 
+# ohmyposh start theme
 eval "$(oh-my-posh init bash --config "~/configs/carver-ohmyposh.json")"
+
+if [ -f $HOME/.ssh/github ]; then
+    eval $(keychain --eval github)
+    echo "github key added successfully"
+else
+    echo "github key not added"
+fi
+
