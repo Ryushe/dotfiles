@@ -6,9 +6,8 @@ nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap n nzzzv
 nnoremap N Nzzzv
-inoremap jk <ESC>
-cnoremap jk <ESC>
-
+imap jj <Esc>
+imap jk <Esc>
 
 map <C-c> "+y
 map <C-v> "+p
