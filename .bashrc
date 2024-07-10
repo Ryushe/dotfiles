@@ -170,8 +170,13 @@ export PATH="$PATH:/snap/bin"
 # ohmyposh start theme
 eval "$(oh-my-posh init bash --config "~/configs/carver-ohmyposh.json")"
 
-if [ -f $HOME/.ssh/github ]; then
-    keychain --eval github &>/dev/null
-fi
+# Custom functions
+connect_to_github() {
+  if ! ps -ef | grep ssh-agent | grep -v grep > /dev/null 2>&1; then
+    eval $(ssh-agent) > /dev/null 2>&1
+  fi
+  ssh-add ~/.ssh/github &> /dev/null 2>&1
+}
 
+alias git_c="connect_to_github"
 
