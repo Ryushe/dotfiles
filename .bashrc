@@ -172,11 +172,22 @@ eval "$(oh-my-posh init bash --config "~/configs/carver-ohmyposh.json")"
 
 # Custom functions
 connect_to_github() {
-  if ! ps -ef | grep ssh-agent | grep -v grep > /dev/null 2>&1; then
-    eval $(ssh-agent) > /dev/null 2>&1
-  fi
-  ssh-add ~/.ssh/github &> /dev/null 2>&1
+    eval `ssh-agent`
+    ssh-add -t 5000 ~/.ssh/github
+  
+}
+
+remove_ssh_identities() {
+    echo "" # makes sure y flag is seperate in the output
+    ssh-add -D
+    if [ "$1" == "y" ]; then
+        echo "killed all ssh-agent processes"
+        pkill ssh-agent
+    else
+        echo "pass y to remove ssh-agents too"
+    fi
 }
 
 alias git_c="connect_to_github"
+alias ssh_r="remove_ssh_identities"
 
