@@ -168,7 +168,7 @@ export PATH="$PATH:/home/$USER/.local/bin"
 export PATH="$PATH:/snap/bin"
 
 # ohmyposh start theme
-eval "$(oh-my-posh init bash --config "~/configs/carver-ohmyposh.json")"
+eval "$(oh-my-posh init bash --config "~/configs/ohmyposhthemes/carver-ohmyposh.json")"
 
 # Custom functions
 connect_to_github() {

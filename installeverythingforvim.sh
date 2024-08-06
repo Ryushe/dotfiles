@@ -41,60 +41,6 @@ else
 	sudo $install_command gcc
 fi
 
-# Check if g++ is installed
-if command -v g++ &>/dev/null; then
-	echo "g++ is installed."
-else
-	echo "g++ is not installed."
-	sleep 1
-	echo "installing g++"
-	sudo $install_command g++
-fi
-
-# Symbolic links for dot files
-files=(
-  ".bashrc" ".tmux.conf" ".vimrc"
-  "$HOME/.config/kitty/kitty.conf" 
-)
-
-for file in "${files[@]}"; do
-	# Extract file name and path if provided
-	file_name=$(basename "$file")
-	local_path=$PWD/$file_name
-	external_path=$file
-	echo $file_name path $external_path
-
-	# allows for custom path conf files
-	if [ $file_name == $external_path ]; then
-		external_path="$HOME/$file_name"
-	fi
-	if [ -e "$external_path" ]; then
-		echo "Found file $file. Removing..."
-		rm "$external_path"
-		sleep 1
-
-	else
-		echo "No file found for $file"
-	fi
-
-	echo "Creating a symbolic link for $file"
-	ln -s "$local_path" "$external_path"
-	sleep 1
-done
-
-# keychain?
-if command -v keychain &>/dev/null; then
-	echo "keychain is installed."
-else
-    echo "keychain is not installed."
-    echo "keychain install? (y)es"
-    read keychain_inpt
-	if [ $keychain_inpt == 'y' ]; then
-		sleep 1
-		echo "installing keychain"
-		sudo $install_command keychain
-	fi
-fi
 
 # Check if g++ is installed
 if command -v oh-my-posh &>/dev/null; then
