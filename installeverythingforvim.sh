@@ -1,27 +1,32 @@
 #!/bin/bash
 
 # Check if Tmux is installed
-echo "checking if tmux is installed"
-sleep 2
 
+distro=$(lsb_release -is)
+if [ "$distro" = "Arch" ]; then
+	install_command="pacman -S"
+elif [ "$distro" = "Ubuntu" ]; then
+	install_command="apt install -y"
+fi
+
+echo "checking if tmux is installed"
 if command -v tmux &>/dev/null; then
 	echo "Tmux is installed"
 else
 	echo "Tmux not found\nInstallingtmux now"
-	sleep 2
+	sleep 1
 	sudo apt install tmux
 fi
 
 # Check if Tpm is already installed
 echo "checking if Tpm is installed"
-sleep 2
 if [ -d "$HOME/.tmux/plugins/tpm" ]; then
 	echo "Tpm is already installed."
 else
 	# Install Tpm
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	echo "Tpm has been installed."
-	sleep 2
+	sleep 1
 fi
 
 # Check if gcc is installed
@@ -29,11 +34,11 @@ echo "Checking if gcc is installed"
 
 if command -v gcc &>/dev/null; then
 	echo "gcc is installed."
-	sleep 2
+	sleep 1
 else
 	echo "gcc is not installed."
-	sleep 2
-	sudo apt install -y gcc
+	sleep 1
+	sudo $install_command gcc
 fi
 
 # Check if g++ is installed
@@ -41,41 +46,54 @@ if command -v g++ &>/dev/null; then
 	echo "g++ is installed."
 else
 	echo "g++ is not installed."
-	sleep 2
+	sleep 1
 	echo "installing g++"
-	sudo apt install -y g++
+	sudo $install_command g++
 fi
 
 # Symbolic links for dot files
-filesToCheck=(".bashrc" ".tmux.conf" ".vimrc")
+files=(
+  ".bashrc" ".tmux.conf" ".vimrc"
+  "$HOME/.config/kitty/kitty.conf" 
+)
 
-for file in "${filesToCheck[@]}"; do
-	filePath="$HOME/$file"
-	sourceFile="$PWD/$file"
+for file in "${files[@]}"; do
+	# Extract file name and path if provided
+	file_name=$(basename "$file")
+	local_path=$PWD/$file_name
+	external_path=$file
+	echo $file_name path $external_path
 
-	if [ -e "$filePath" ]; then
+	# allows for custom path conf files
+	if [ $file_name == $external_path ]; then
+		external_path="$HOME/$file_name"
+	fi
+	if [ -e "$external_path" ]; then
 		echo "Found file $file. Removing..."
-		rm "$filePath"
-		sleep 2
+		rm "$external_path"
+		sleep 1
 
 	else
 		echo "No file found for $file"
 	fi
 
 	echo "Creating a symbolic link for $file"
-	ln -s "$sourceFile" "$filePath"
-	sleep 2
-
+	ln -s "$local_path" "$external_path"
+	sleep 1
 done
 
-# Check if keychain is installed
+# keychain?
 if command -v keychain &>/dev/null; then
 	echo "keychain is installed."
 else
-	echo "keychain is not installed."
-	sleep 2
-	echo "installing keychain"
-	sudo apt install -y keychain
+    echo "keychain is not installed."
+    echo "keychain install? (y)es"
+    read keychain_inpt
+	if [ $keychain_inpt == 'y' ]; then
+		sleep 1
+		echo "installing keychain"
+		sudo $install_command keychain
+	fi
 fi
 
 # Check if g++ is installed
@@ -83,7 +101,7 @@ if command -v oh-my-posh &>/dev/null; then
 	echo "ohmyposh is installed."
 else
 	echo "ohmyposh is not installed."
-	sleep 2
+	sleep 1
 	echo "installing ohmyposh"
     curl -s https://ohmyposh.dev/install.sh | bash -s
 fi
@@ -92,3 +110,9 @@ fi
 # oh-my-posh font install
 # install jetbrains mono
 # make sure shell is in bash not zsh
+
+# stow moves .files into their respective areas
+# for d in `ls .`;
+# do
+#     ( stow $d ) 
+# done
