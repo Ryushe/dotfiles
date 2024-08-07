@@ -1,55 +1,44 @@
 #!/bin/bash
 
 # Check if Tmux is installed
+normal_apps=("tmux" "gcc")
 
 distro=$(lsb_release -is)
 if [ "$distro" = "Arch" ]; then
-	install_command="pacman -S"
+  install_command="pacman -S"
 elif [ "$distro" = "Ubuntu" ]; then
-	install_command="apt install -y"
+  install_command="apt install -y"
 fi
 
-echo "checking if tmux is installed"
-if command -v tmux &>/dev/null; then
-	echo "Tmux is installed"
-else
-	echo "Tmux not found\nInstallingtmux now"
-	sleep 1
-	sudo apt install tmux
-fi
+# checks apps in normal apps, if not installed install it
+for app in "${normal_apps[@]}"; do
+  echo checking if $app is installed
+  if command -v $app &>/dev/null; then
+    echo $app is installed
+  else
+    echo $app not found, installing now
+    sleep 1
+    sudo $install_command $app
+  fi
+done
 
 # Check if Tpm is already installed
 echo "checking if Tpm is installed"
 if [ -d "$HOME/.tmux/plugins/tpm" ]; then
-	echo "Tpm is already installed."
+  echo "Tpm is already installed."
 else
-	# Install Tpm
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-	echo "Tpm has been installed."
-	sleep 1
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  echo "Tpm has been installed."
+  sleep 1
 fi
 
-# Check if gcc is installed
-echo "Checking if gcc is installed"
-
-if command -v gcc &>/dev/null; then
-	echo "gcc is installed."
-	sleep 1
-else
-	echo "gcc is not installed."
-	sleep 1
-	sudo $install_command gcc
-fi
-
-
-# Check if g++ is installed
 if command -v oh-my-posh &>/dev/null; then
-	echo "ohmyposh is installed."
+  echo "ohmyposh is installed."
 else
-	echo "ohmyposh is not installed."
-	sleep 1
-	echo "installing ohmyposh"
-    curl -s https://ohmyposh.dev/install.sh | bash -s
+  echo "ohmyposh is not installed."
+  sleep 1
+  echo "installing ohmyposh"
+  curl -s https://ohmyposh.dev/install.sh | bash -s
 fi
 
 # notes:
@@ -60,5 +49,5 @@ fi
 # stow moves .files into their respective areas
 # for d in `ls .`;
 # do
-#     ( stow $d ) 
+#     ( stow $d )
 # done
