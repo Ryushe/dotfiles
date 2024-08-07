@@ -115,6 +115,26 @@ MoveZoomLeft=none,none,Move Zoomed Area to Left
 MoveZoomRight=none,none,Move Zoomed Area to Right
 MoveZoomUp=none,none,Move Zoomed Area Upwards
 Overview=Meta+W,Meta+W,Toggle Overview
+PoloniumCycleEngine=,none,Polonium: Cycle Engine
+PoloniumFocusAbove=,none,Polonium: Focus Above
+PoloniumFocusBelow=,none,Polonium: Focus Below
+PoloniumFocusLeft=,none,Polonium: Focus Left
+PoloniumFocusRight=,none,Polonium: Focus Right
+PoloniumInsertAbove=,none,Polonium: Insert Above
+PoloniumInsertBelow=,none,Polonium: Insert Below
+PoloniumInsertLeft=,none,Polonium: Insert Left
+PoloniumInsertRight=,none,Polonium: Insert Right
+PoloniumOpenSettings=,none,Polonium: Open Settings Dialog
+PoloniumResizeAbove=,none,Polonium: Resize Above
+PoloniumResizeBelow=,none,Polonium: Resize Below
+PoloniumResizeLeft=,none,Polonium: Resize Left
+PoloniumResizeRight=,none,Polonium: Resize Right
+PoloniumRetileWindow=Meta+Shift+Space,none,Polonium: Retile Window
+PoloniumSwitchBTree=,none,Polonium: Use Binary Tree Engine
+PoloniumSwitchHalf=,none,Polonium: Use Half Engine
+PoloniumSwitchKwin=,none,Polonium: Use KWin Engine
+PoloniumSwitchMonocle=,none,Polonium: Use Monocle Engine
+PoloniumSwitchThreeColumn=,none,Polonium: Use Three Column Engine
 Setup Window Shortcut=none,,Setup Window Shortcut
 Show Desktop=Meta+D,Meta+D,Peek at Desktop
 Switch One Desktop Down=Meta+Ctrl+Down,Meta+Ctrl+Down,Switch One Desktop Down
@@ -306,8 +326,14 @@ switch to next activity=none,,Switch to Next Activity
 switch to previous activity=none,,Switch to Previous Activity
 toggle do not disturb=none,,Toggle do not disturb
 
+[services][google-chrome.desktop]
+_launch=Ctrl+Alt+S
+
 [services][kitty.desktop]
 _launch=Ctrl+Alt+T
+
+[services][obsidian.desktop]
+_launch=Ctrl+Alt+O
 
 [services][org.kde.konsole.desktop]
 _launch=none
