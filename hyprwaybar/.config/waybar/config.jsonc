@@ -51,14 +51,14 @@
       "max-length": 40,
       "all-outputs": true
     },
-     "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 20,
-        "icon-theme": "Star",
-        "tooltip-format": "{title}",
-        "on-click": "minimize",
-        "on-click-middle": "close",
-        "on-click-right": "activate"
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 20,
+      "icon-theme": "Star",
+      "tooltip-format": "{title}",
+      "on-click": "minimize",
+      "on-click-middle": "close",
+      "on-click-right": "activate"
     },
     "cava": {
       //        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
