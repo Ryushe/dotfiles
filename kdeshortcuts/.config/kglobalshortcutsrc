@@ -2,6 +2,7 @@
 _k_friendly_name=Activity Manager
 switch-to-activity-a478cb5c-504c-4b0a-8bd2-14c611c735f3=none,none,Switch to activity "Default"
 switch-to-activity-c9830e49-e40e-40f9-9780-2c0543a7ed6f=none,none,Switch to activity "Default"
+switch-to-activity-e3ebbb8f-5240-46c9-ad92-54144fa0b250=none,none,Switch to activity "Default"
 
 [KDE Keyboard Layout Switcher]
 Switch to Last-Used Keyboard Layout=Meta+Alt+L,Meta+Alt+L,Switch to Last-Used Keyboard Layout
@@ -95,7 +96,7 @@ Kill Window=Meta+Ctrl+Esc,Meta+Ctrl+Esc,Kill Window
 Krohnkite: Cycle Layout=none,none,
 Krohnkite: Decrease=none,none,
 Krohnkite: Down/Next=none,none,
-Krohnkite: Float=,none,
+Krohnkite: Float=Meta+Ctrl+F,none,
 Krohnkite: Float All=none,none,
 Krohnkite: Floating Layout=none,none,
 Krohnkite: Grow Height=none,none,
@@ -125,12 +126,12 @@ KrohnkiteBTreeLayout=none,none,Krohnkite: BTree Layout
 KrohnkiteDecrease=Meta+Shift+I,none,Krohnkite: Decrease
 KrohnkiteFloatAll=Meta+Shift+F,none,Krohnkite: Float All
 KrohnkiteFloatingLayout=none,none,Krohnkite: Floating Layout
-KrohnkiteFocusDown=none,none,Krohnkite: Focus Down
+KrohnkiteFocusDown=Meta+Ctrl+J,none,Krohnkite: Focus Down
 KrohnkiteFocusLeft=Meta+Ctrl+H,none,Krohnkite: Focus Left
 KrohnkiteFocusNext=none,none,Krohnkite: Focus Next
 KrohnkiteFocusPrev=none,none,Krohnkite: Focus Previous
-KrohnkiteFocusRight=none,none,Krohnkite: Focus Right
-KrohnkiteFocusUp=none,none,Krohnkite: Focus Up
+KrohnkiteFocusRight=Meta+Ctrl+L,none,Krohnkite: Focus Right
+KrohnkiteFocusUp=Meta+Ctrl+K,none,Krohnkite: Focus Up
 KrohnkiteGrowHeight=Meta+Ctrl+N,none,Krohnkite: Grow Height
 KrohnkiteIncrease=Meta+Ctrl+I,none,Krohnkite: Increase
 KrohnkiteMonocleLayout=Meta+Ctrl+Z,none,Krohnkite: Monocle Layout
