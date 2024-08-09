@@ -1,0 +1,1 @@
+mv to /etc/sddm to use
