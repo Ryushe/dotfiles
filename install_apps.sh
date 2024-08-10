@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Check if Tmux is installed
-normal_apps=("tmux" "gcc")
+normal_apps=("tmux" "gcc" "kitty" "nvim)
 
 distro=$(lsb_release -is)
 if [ "$distro" = "Arch" ]; then
   install_command="pacman -S"
-elif [ "$distro" = "Ubuntu" ]; then
+elif [ "$distro" = "Debian" ]; then
   install_command="apt install -y"
 fi
 
@@ -18,7 +18,7 @@ for app in "${normal_apps[@]}"; do
   else
     echo $app not found, installing now
     sleep 1
-    sudo $install_command $app
+    $install_command $app
   fi
 done
 
