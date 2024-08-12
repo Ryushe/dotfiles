@@ -2,30 +2,29 @@
 
 distro=$(lsb_release -is)
 if [ "$distro" = "Arch" ]; then
-	install_command="pacman -S"
+  install_command="pacman -S"
 elif [ "$distro" = "Ubuntu" ]; then
-	install_command="apt install -y"
+  install_command="apt install -y"
 fi
 
-blacklist=("ohmyposhthemes" "sddm") # add "" no comma for more
-for d in `ls .`;
-do
-	if [ -d $d ]; then
-		if [[ ! "$(printf "%s\n" "${blacklist[@]}" | grep -Fx "$d")" ]]; then
-			if command -v stow &>/dev/null; then
-				( stow $d )
-				echo linked $d
-			else
-				$install_command stow
-			fi
-		fi
-	fi
+blacklist=("ohmyposhthemes" "sddm" "scripts") # add "" no comma for more
+for d in $(ls .); do
+  if [ -d $d ]; then
+    if [[ ! "$(printf "%s\n" "${blacklist[@]}" | grep -Fx "$d")" ]]; then
+      if command -v stow &>/dev/null; then
+        (stow $d)
+        echo linked $d
+      else
+        $install_command stow
+      fi
+    fi
+  fi
 done
 
 # # Symbolic links for dot files
 # files=(
 #   ".bashrc" ".tmux.conf" ".vimrc"
-#   "$HOME/.config/kitty/kitty.conf" 
+#   "$HOME/.config/kitty/kitty.conf"
 #   "$HOME/.config/kglobalshortcutsrc"
 # )
 
@@ -53,4 +52,3 @@ done
 # 	ln -s "$local_path" "$external_path"
 # 	sleep 1
 # done
-

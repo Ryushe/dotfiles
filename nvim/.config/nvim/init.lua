@@ -14,7 +14,8 @@ vim.api.nvim_set_keymap("n", "<C-c>", '"+y', { noremap = true })
 vim.api.nvim_set_keymap("", "<C-v>", '"+p', { noremap = true })
 vim.api.nvim_set_keymap("", "<C-v>", '"+p', { noremap = true })
 vim.api.nvim_set_keymap("i", "jj", "<Esc>", {})
-
+vim.api.nvim_set_keymap("n", "gt", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gT", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
 -- Options
 -- vim.opt.number = true
 -- vim.opt.relativenumber = true
