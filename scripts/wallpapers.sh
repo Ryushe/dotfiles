@@ -8,11 +8,14 @@ wallpapers=(
   "tokyo.png"
   "kungfupanda.jpg"
   "wallhaven-d6j6ko.png"
-
   #w2
-  "batmancity.jpg"
   "codinggod.png"
+  "dopesunsetcar.jpeg"
   "codingarch.png"
+  #w3
+  "narutocartoon.jpg"
+  "narutopurplevert.jpg"
+  "lilnaruto.jpg"
 )
 
-wp_path="~/dotfiles/wallpapers/"
+wp_path="$HOME/dotfiles/wallpapers/"

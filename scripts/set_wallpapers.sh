@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./wallpapers.sh
+source ~/dotfiles/scripts/wallpapers.sh
 
 # get mons function that gets num of mons and assins them
 get_mons() {
@@ -13,7 +13,7 @@ set_wp() {
     wallpaper="$wp_path${selected_wps[$i]}"
     monitor="${mons[$i]}"
     echo "Wallpaper: $wallpaper, Monitor: $monitor"
-    hyprctl hyprpaper wallpaper "$monitor, $wallpaper"
+    hyprctl hyprpaper wallpaper "$monitor,$wallpaper"
   done
 }
 
