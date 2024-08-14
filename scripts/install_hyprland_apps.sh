@@ -1,29 +1,28 @@
-pacman_install = "pacman -S"
-apps = ("waybar" 
-        "flameshot" 
-        "grim"
-        "hyprpaper"
-        "ninja" 
-        "gcc" 
-        "wayland-protocols" 
-        "libjpeg-turbo" 
-        "libwebp" 
-        "pango" 
-        "cairo" 
-        "pkgconf" 
-        "cmake" 
-        "libglvnd" 
-        "wayland" 
-        "hyprutils" 
-        "hyprwayland-scanner"
-        "hyprlang"
+pacman_install="pacman -S"
+apps=(
+  "waybar"
+  "grim"
+  "hyprpaper"
+  "ninja"
+  "gcc"
+  "wayland-protocols"
+  "libjpeg-turbo"
+  "libwebp"
+  "pango"
+  "cairo"
+  "pkgconf"
+  "cmake"
+  "libglvnd"
+  "wayland"
+  "hyprutils"
+  "hyprwayland-scanner"
+  "hyprlang"
+  "cliphist"
+  "wl-clipboard"
+)
+sudo pacman -S "${apps[@]}"
 
-      )
-for app in "${apps[@]}"; do 
-  $pacman_install $app
-done
-
-yay_apps = ("hyprsome" )
-for app in "${yay_apps[@]}"; do 
+yay_apps=("hyprsome" "flameshot-gui")
+for app in "${yay_apps[@]}"; do
   yay -S $app
 done

@@ -1,0 +1,10 @@
+set_wallpapers, preload should work
+wallpapers.sh has wp urls
+right now issue is HYPRLAND_INSTANCE_SIGNATURE not set! (is hyprland running?)
+  hope fixed on reboot
+
+commented out in hyprland
+#exec-once = ~/dotfiles/scripts/preload_wallpapers.sh
+#$wp = ~/dotfiles/scripts/set_wallpapers.sh
+
+currently testing the hyprpaper conf works as is, or if need to tweak
