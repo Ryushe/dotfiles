@@ -23,7 +23,7 @@ wallpapers=(
   #w5
   "darknaruto.jpeg"
   "delorian.jpg"
-  "narutomanga.png"
+  "nautomanga.png"
 )
 
 wp_path="$HOME/dotfiles/wallpapers/"

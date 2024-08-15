@@ -20,3 +20,4 @@ remove_ssh_identities() {
 
 alias git_c="connect_to_github"
 alias ssh_r="remove_ssh_identities"
+alias logout="~/logout.sh"
