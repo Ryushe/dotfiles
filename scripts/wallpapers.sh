@@ -6,24 +6,24 @@
 wallpapers=(
   #w1
   "tokyo.png"
-  "lambovert.jpg"
+  "girlcybervert.jpg"
   "wallhaven-d6j6ko.png"
   #w2
-  "codinggod.png"
-  "dopesunsetcar.jpeg"
-  "codingarch.png"
+  "pinktree.jpeg"
+  "animesunset.jpeg"
+  "paintedhouse.jpg"
   #w3
   "narutocartoon.jpg"
   "narutopurplevert.jpg"
   "lilnaruto.jpg"
   #w4
-  "pinktree.jpeg"
-  "animesunset.jpeg"
-  "paintedhouse.jpg"
+  "starynight.jpeg"
+  "skyvert.jpg"
+  "sm.jpeg"
   #w5
-  "darknaruto.jpeg"
-  "delorian.jpg"
   "nautomanga.png"
+  "narutovert.jpg"
+  "narutosquad.jpg"
 )
 
 wp_path="$HOME/dotfiles/wallpapers/"

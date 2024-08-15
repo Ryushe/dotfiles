@@ -1,3 +1,4 @@
+# kill itself if running
 source ~/dotfiles/scripts/wallpapers.sh
 
 sleep 5
