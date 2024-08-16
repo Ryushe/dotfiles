@@ -19,6 +19,7 @@ apps=(
   "hyprlang"
   "cliphist"
   "wl-clipboard"
+  "swappy"
 )
 sudo pacman -S "${apps[@]}"
 
