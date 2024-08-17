@@ -21,4 +21,4 @@ remove_ssh_identities() {
 alias git_c="connect_to_github"
 alias ssh_r="remove_ssh_identities"
 alias logout="~/logout.sh"
-alias htb="~/scripts/hacking/start_htb.sh"
+alias htb="~/scripts/open_apps/start_htb.sh"
