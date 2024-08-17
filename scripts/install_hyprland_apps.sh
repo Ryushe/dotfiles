@@ -20,6 +20,7 @@ apps=(
   "cliphist"
   "wl-clipboard"
   "swappy"
+  "dunst"
 )
 sudo pacman -S "${apps[@]}"
 
