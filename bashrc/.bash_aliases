@@ -17,13 +17,13 @@ remove_ssh_identities() {
     echo "pass y to remove ssh-agents too"
   fi
 }
+source ~/.groq_key
 
 alias git_c="connect_to_github"
 alias ssh_r="remove_ssh_identities"
 alias logout="~/logout.sh"
 alias htb="~/scripts/open_apps/start_htb.sh"
 alias jobbie="~/scripts/open_apps/jobbie.sh"
-alias gpt="tgpt --provider duckduckgo --model gpt-4o-mini"
-alias llama="tgpt --provider duckduckgo --model meta-llama"
 alias bbox="tgpt --provider blackboxai"
 alias claude="tgpt --provider duckduckgo --model claude-3-haiku-20240307"
+alias llama="tgpt --provider groq --model llama3-70b-8192 --key $GROQ_API_KEY"
