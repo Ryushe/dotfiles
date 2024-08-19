@@ -21,6 +21,7 @@ apps=(
   "wl-clipboard"
   "swappy"
   "dunst"
+  "playerctl"
 )
 sudo pacman -S "${apps[@]}"
 
