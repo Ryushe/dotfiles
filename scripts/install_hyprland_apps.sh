@@ -24,7 +24,7 @@ apps=(
 )
 sudo pacman -S "${apps[@]}"
 
-yay_apps=("hyprsome" "flameshot-gui")
+yay_apps=("hyprsome")
 for app in "${yay_apps[@]}"; do
   yay -S $app
 done
