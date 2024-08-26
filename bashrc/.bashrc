@@ -161,6 +161,11 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 export PATH="$PATH:/opt/nvim/"
+#language envs
+export GTK_IM_MODULE='fcitx'
+export QT_IM_MODULE='fcitx'
+export SDL_IM_MODULE='fcitx'
+export XMODIFIERS='@im=fcitx'
 
 # Created by `pipx` on 2023-10-24 07:27:09
 export PATH="$PATH:/home/$USER/.local/bin"
