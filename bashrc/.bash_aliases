@@ -28,3 +28,4 @@ alias bbox="tgpt --provider blackboxai"
 alias claude="tgpt --provider duckduckgo --model claude-3-haiku-20240307"
 alias llama="tgpt --provider groq --model llama3-70b-8192 --key $GROQ_API_KEY"
 alias godmode="godmode >/dev/null 2>&1 &"
+alias ai_images='/home/ryushe/scripts/open_apps/ai_images/ai_images.sh'
