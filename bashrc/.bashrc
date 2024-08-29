@@ -175,3 +175,5 @@ export PATH="$PATH:/snap/bin"
 
 # ohmyposh start theme
 eval "$(oh-my-posh init bash --config "~/dotfiles/ohmyposhthemes/carver-ohmyposh.json")"
+#zoxide (cd replacement)
+eval "$(zoxide init bash)"

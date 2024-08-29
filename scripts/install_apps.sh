@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if Tmux is installed
-normal_apps=("tmux" "gcc" "kitty" "nvim" "tgpt")
+normal_apps=("tmux" "gcc" "kitty" "nvim" "tgpt" "fzf" "zoxide")
 
 distro=$(lsb_release -is)
 if [ "$distro" = "Arch" ]; then
