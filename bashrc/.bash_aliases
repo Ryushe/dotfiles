@@ -17,7 +17,6 @@ remove_ssh_identities() {
     echo "pass y to remove ssh-agents too"
   fi
 }
-source ~/.groq_key
 
 alias git_c="connect_to_github"
 alias ssh_r="remove_ssh_identities"
