@@ -24,7 +24,7 @@ get_mons() {
 #sets mon
 set_wp() {
   for i in "${!selected_wps[@]}"; do
-    wallpaper="$wp_path${selected_wps[$i]}"
+    wallpaper="$wp_path/${selected_wps[$i]}"
     monitor="${mons[$i]}"
     echo "Wallpaper: $wallpaper, Monitor: $monitor"
     hyprctl hyprpaper wallpaper "$monitor,$wallpaper"

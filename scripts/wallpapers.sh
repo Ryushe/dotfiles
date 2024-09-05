@@ -26,4 +26,4 @@ wallpapers=(
   "narutosquad.jpg"
 )
 
-wp_path="$HOME/dotfiles/wallpapers/"
+wp_path="$HOME/dotfiles/wallpapers"
