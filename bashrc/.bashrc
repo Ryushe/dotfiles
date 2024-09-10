@@ -161,6 +161,8 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 export PATH="$PATH:/opt/nvim/"
+export PATH=$PATH:/usr/local/bin
+
 #language envs
 export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'
@@ -177,3 +179,5 @@ export PATH="$PATH:/snap/bin"
 eval "$(oh-my-posh init bash --config "~/dotfiles/ohmyposhthemes/carver-ohmyposh.json")"
 #zoxide (cd replacement)
 eval "$(zoxide init bash)"
+# wrap text
+COLUMNS=250
