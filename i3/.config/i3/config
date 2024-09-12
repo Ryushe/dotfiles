@@ -27,7 +27,7 @@ font pango:Hack 10
 # font, it doesn’t scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier 
+floating_modifier Mod1
 
 # start apps
 bindsym $mod+Ctrl+t exec kitty
@@ -175,6 +175,9 @@ gaps outer -8
 smart_borders no_gaps
 # border_radius 2
 
+# fast cursor
+exec xset r rate 350 85
+
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -183,3 +186,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 client.focused          #2e3436 #2e3436 #ffffff #2e3436   #2e3436
 exec_always --no-startup-id feh --bg-scale /usr/share/backgrounds/macaw-poly2.jpg
 exec --no-startup-id vmware-user
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id ~/.config/polybar/launch.sh --grayblocks
+# exec_always --no-startup-id picom -bc
