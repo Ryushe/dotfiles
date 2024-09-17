@@ -21,3 +21,11 @@ else
 fi
 hyprctl dispatch swapactiveworkspaces $current_mon_name $new_mon
 echo moving $current_mon_name to $new_mon
+sleep .01
+# if left mon and moving left || right mon moving right
+if [[ $current_mon_name == $left_mon && $1 == "l" || $current_mon_name == $right_mon && $1 == "r" ]]; then
+  :
+else
+  echo "moving mouse to $main_mon"
+  hyprctl dispatch focusmonitor $main_mon
+fi
