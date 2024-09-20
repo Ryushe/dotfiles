@@ -1,7 +1,10 @@
 #!/bin/bash
 
+# NOTE make option to instll flatpak too, y/n while also updating this list with apps that I use a lot
+
 # Check if Tmux is installed
 normal_apps=("tmux" "gcc" "kitty" "nvim" "tgpt" "fzf" "zoxide")
+flatpak_apps=()
 
 distro=$(lsb_release -is)
 if [ "$distro" = "Arch" ]; then
