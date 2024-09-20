@@ -106,8 +106,8 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-bindsym $mod+Ctrl+left workspace prev
-bindsym $mod+Ctrl+right workspace next
+bindsym $mod+Ctrl+Left workspace prev
+bindsym $mod+Ctrl+Right workspace next
 
 # switch to workspace
 bindsym $mod+Ctrl+1 workspace $ws1
@@ -188,4 +188,5 @@ exec_always --no-startup-id feh --bg-scale /usr/share/backgrounds/macaw-poly2.jp
 exec --no-startup-id vmware-user
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id ~/.config/polybar/launch.sh --grayblocks
+exec --no-startup-id syncthing
 # exec_always --no-startup-id picom -bc

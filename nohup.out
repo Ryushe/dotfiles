@@ -1,0 +1,22 @@
+polybar|notice:  Parsing config file: /etc/polybar/config.ini
+polybar|notice:  Listening for IPC messages (PID: 341453)
+polybar|notice:  Loading module 'xworkspaces' of type 'internal/xworkspaces'
+polybar|notice:  Loading module 'xwindow' of type 'internal/xwindow'
+polybar|notice:  Loading module 'filesystem' of type 'internal/fs'
+polybar|notice:  Loading module 'pulseaudio' of type 'internal/pulseaudio'
+polybar|notice:  pulseaudio: using default sink alsa_output.pci-0000_02_02.0.analog-stereo
+polybar|notice:  Loading module 'xkeyboard' of type 'internal/xkeyboard'
+polybar|notice:  Loading module 'memory' of type 'internal/memory'
+polybar|notice:  Loading module 'cpu' of type 'internal/cpu'
+polybar|notice:  Loading module 'wlan' of type 'internal/network'
+polybar|error: Disabling module "wlan" (reason: No interface found for type 'wireless')
+polybar|notice:  Loading module 'eth' of type 'internal/network'
+polybar|notice:  module/eth: Discovered wired interface eth0
+polybar|notice:  Loading module 'date' of type 'internal/date'
+polybar|notice:  Loaded 9 modules
+polybar|notice:  Loaded font "monospace" (name=DejaVu Sans Mono, offset=2, file=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf)
+polybar|notice:  Received signal(15): Terminated
+polybar|notice:  Termination signal received, shutting down...
+polybar|error: Disabling module "battery" (reason: No suitable way to get current capacity value)
+polybar|error: Disabling module "backlight" (reason: The file '/sys/class/backlight/amdgpu_bl0/actual_brightness' does not exist)
+polybar|error: Disabling module "network" (reason: Invalid network interface "wlan0")
