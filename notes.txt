@@ -8,3 +8,8 @@ commented out in hyprland
 #$wp = ~/dotfiles/scripts/set_wallpapers.sh
 
 currently testing the hyprpaper conf works as is, or if need to tweak
+
+if not in ctrl+space menu and cant launch in cli
+
+sudo ln -s /opt/SoapUI-5.7.2/bin/SoapUI.sh /usr/local/bin/soapui
+
