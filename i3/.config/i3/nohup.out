@@ -1,0 +1,8 @@
+Gtk-Message: 20:23:21.706: Failed to load module "atk-bridge": 'gtk_module_display_init': /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libgail.so: undefined symbol: gtk_module_display_init
+polybar|error: Disabling module "battery" (reason: No suitable way to get current capacity value)
+polybar|error: Disabling module "backlight" (reason: The file '/sys/class/backlight/amdgpu_bl0/actual_brightness' does not exist)
+polybar|error: Disabling module "network" (reason: Invalid network interface "wlan0")
+
+(nitrogen:16349): GLib-GObject-CRITICAL **: 20:23:21.959: Attempting to freeze the notification queue for object GtkSettings[0x55a99d9e4db0]; Property notification does not work during instance finalization.
+
+(nitrogen:16349): GLib-GObject-CRITICAL **: 20:23:21.959: Attempting to thaw the notification queue for object GtkSettings[0x55a99d9e4db0]; Property notification does not work during instance finalization.

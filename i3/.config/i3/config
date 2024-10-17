@@ -9,6 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+set $alt Mod1
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -137,6 +138,10 @@ bindsym $mod+Ctrl+Shift+0 move container to workspace $ws10
 bindsym $mod+Ctrl+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Ctrl+Shift+r restart
+
+# restarts polybar and bg
+bindsym $mod+Ctrl+Shift+p exec "$HOME/dotfiles/i3/.config/i3/restart_bar_and_bg.sh"
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Ctrl+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
