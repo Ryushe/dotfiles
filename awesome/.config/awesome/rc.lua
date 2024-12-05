@@ -53,7 +53,8 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 -- gaps
 beautiful.useless_gap = 2
 beautiful.gap_single_client = true
-
+-- font
+beautiful.font = "Hack 10"
 -- xset == set how fast chars repeat
 awful.spawn.with_shell("xset r rate 350 85")
 -- This is used later as the default terminal and editor to run.
