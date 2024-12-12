@@ -56,13 +56,15 @@ beautiful.gap_single_client = true
 -- font
 beautiful.font = "Hack 10"
 -- xset == set how fast chars repeat
-awful.spawn.with_shell("xset r rate 350 85")
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 browser = "firefox"
 
+-- startup
+awful.spawn.with_shell("xset r rate 350 85")
+awful.spawn.with_shell("syncthing")
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
@@ -330,8 +332,8 @@ globalkeys = gears.table.join(
               {description = "open a browser", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Control"   }, "e", awesome.quit,
-              {description = "quit awesome", group = "awesome"}),
+    -- awful.key({ modkey, "Control"   }, "e", awesome.quit,
+    --           {description = "quit awesome", group = "awesome"}),
 
   -- resize windows
     awful.key({ modkey, "Mod1", "Control" }, "l",     function () awful.tag.incmwfact( 0.03)          end,
