@@ -446,7 +446,7 @@ for i = 1, 9 do
                   end,
                   {description = "view tag #"..i, group = "tag"}),
         -- Toggle tag display. - helpful if you want to display more than one space at once
-        awful.key({ modkey, "Mod1" }, "#" .. i + 9,
+        awful.key({ "Mod1" }, "#" .. i + 9,
                   function ()
                       local screen = awful.screen.focused()
                       local tag = screen.tags[i]
@@ -467,7 +467,7 @@ for i = 1, 9 do
                   end,
                   {description = "move focused client to tag #"..i, group = "tag"})
         -- -- Toggle tag on focused client.
-        -- awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
+        -- awful.key({ "Mod1" }, "#" .. i + 9,
         --           function ()
         --               if client.focus then
         --                   local tag = client.focus.screen.tags[i]
