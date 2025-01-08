@@ -162,6 +162,7 @@ export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 export PATH="$PATH:/opt/nvim/"
 export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/opt/urldedupe/
 
 #language envs
 export GTK_IM_MODULE=fcitx
@@ -183,3 +184,4 @@ eval "$(oh-my-posh init bash --config "~/dotfiles/ohmyposhthemes/carver-ohmyposh
 eval "$(zoxide init bash)"
 # wrap text
 COLUMNS=250
+source $GOPATH/pkg/mod/github.com/tomnomnom/gf@v0.0.0-20200618134122-dcd4c361f9f5/gf-completion.bash
