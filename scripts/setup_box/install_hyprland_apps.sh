@@ -22,6 +22,14 @@ apps=(
   "swappy"
   "dunst"
   "playerctl"
+  "syncthing"
+  "fcitx5"
+  "fcitx5-breeze"
+  "fcitx5-configtool"
+  "fcitx5-gtk"
+  "fcitx5-mozc"
+  "fcitx5-qt"
+  "gammastep"
 )
 sudo pacman -S "${apps[@]}"
 

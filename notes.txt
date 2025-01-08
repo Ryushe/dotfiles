@@ -8,3 +8,11 @@ commented out in hyprland
 #$wp = ~/dotfiles/scripts/set_wallpapers.sh
 
 currently testing the hyprpaper conf works as is, or if need to tweak
+
+making a new vm: 
+  - make sure when install seperate partitions (makes things simpler)
+  - fist installing dotfiles http://github.com/ryushe/dotfiles
+    - sudo apt install stow neovim tmux
+    - running ln_script
+  - setting i3 as workmanager
+    - sudo apt install i3

@@ -35,3 +35,5 @@ alias ai_images='~/scripts/open_apps/open_apps.sh ~/scripts/open_apps/ai_images/
 alias japaneese='~/scripts/open_apps/open_apps.sh ~/scripts/open_apps/japaneese/japaneese.conf'
 alias htb='~/scripts/open_apps/open_apps.sh ~/scripts/open_apps/htb/htb.conf'
 alias jobbie='~/scripts/open_apps/open_apps.sh ~/scripts/open_apps/jobbie/jobbie.conf'
+alias carter_proj='~/scripts/open_apps/open_apps.sh ~/scripts/open_apps/code/carter_proj.conf'
+alias bounty='~/scripts/open_apps/open_apps.sh ~/scripts/open_apps/bounty/bounty.conf'

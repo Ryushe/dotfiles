@@ -39,10 +39,10 @@ vim.api.nvim_set_keymap("n", "gT", ":BufferLineCyclePrev<CR>", { noremap = true,
 
 -- Options
 -- vim.opt.number = true
--- vim.opt.relativenumber = true
--- vim.opt.tabstop = 4
+vim.opt.relativenumber = true
+vim.opt.tabstop = 4
 -- vim.opt.shiftwidth = 4
 -- vim.opt.expandtab = true
 
 -- Enable syntax highlighting
--- vim.cmd("syntax enable")
+vim.cmd("syntax enable")
