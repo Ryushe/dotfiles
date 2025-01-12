@@ -15,11 +15,11 @@ vim.api.nvim_set_keymap("", "<C-v>", '"+p', { noremap = true })
 vim.api.nvim_set_keymap("i", "jj", "<Esc>", {})
 vim.api.nvim_set_keymap("n", "gt", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gT", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
--- Go to the last character of the line
-vim.keymap.set("n", "gl", "$", { noremap = true, silent = true })
+-- Go to the end of the line
+vim.keymap.set({ "n", "v" }, "gl", "$", { noremap = true, silent = true })
 -- Go to the first character of the line
-vim.keymap.set("n", "gh", "^", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "gh", "^", { noremap = true, silent = true })
 -- Go to the markdown header below
-vim.keymap.set("n", "gj", "/^#<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "gj", "/^#<CR>", { noremap = true, silent = true })
 -- Go to the markdown header above
-vim.keymap.set("n", "gk", "?^#<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "gk", "?^#<CR>", { noremap = true, silent = true })
