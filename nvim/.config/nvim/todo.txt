@@ -1,0 +1,6 @@
+todo:
+- get rid of dumb start emojis
+- make mini.surround work
+
+done:
+

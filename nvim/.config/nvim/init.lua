@@ -23,6 +23,9 @@ require("nvim_comment").setup({
 
 vim.api.nvim_set_option("clipboard", "unnamedplus")
 
+-- color highlights -> delete colorizer.lua too to remove
+vim.o.termguicolors = true
+
 -- Options
 -- vim.opt.number = true
 vim.opt.relativenumber = true

@@ -179,7 +179,7 @@ export PATH="$PATH:/home/$USER/.local/bin"
 export PATH="$PATH:/snap/bin"
 
 # ohmyposh start theme
-eval "$(oh-my-posh init bash --config "~/dotfiles/ohmyposhthemes/carver-ohmyposh.json")"
+eval "$(oh-my-posh init bash --config "~/dotfiles/ohmyposhthemes/kali.json")"
 #zoxide (cd replacement)
 eval "$(zoxide init bash)"
 # wrap text
