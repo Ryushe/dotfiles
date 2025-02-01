@@ -1,0 +1,9 @@
+https://gitlab.com/cscs/transfuse
+- install w/ `curl -O https://gitlab.com/cscs/transfuse/-/raw/master/transfuse.sh`
+- chmod +x transfuse.sh
+- ./transfuse.sh -b `user`
+- ./transfuse.sh -r `user`
+  
+  
+  can backup and restore w/ transfuse
+

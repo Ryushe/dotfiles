@@ -177,6 +177,8 @@ export PATH="$PATH:/home/$USER/.local/bin"
 
 # snap path
 export PATH="$PATH:/snap/bin"
+# gem
+export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH"
 
 # ohmyposh start theme
 eval "$(oh-my-posh init bash --config "~/dotfiles/ohmyposhthemes/kali.json")"
