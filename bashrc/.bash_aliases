@@ -38,3 +38,4 @@ alias jobbie='~/scripts/open_apps/open_apps.sh ~/scripts/open_apps/jobbie/jobbie
 alias carter_proj='~/scripts/open_apps/open_apps.sh ~/scripts/open_apps/code/carter_proj.conf'
 alias bounty='~/scripts/open_apps/open_apps.sh ~/scripts/open_apps/bounty/bounty.conf'
 alias htb2='~/scripts/open_apps/open_apps.sh ~/scripts/open_apps/htb2/htb2.conf'
+alias bnty='/home/ryushe/scripts/open_apps/open_apps.sh /home/ryushe/scripts/open_apps/bnty/bnty.conf'
