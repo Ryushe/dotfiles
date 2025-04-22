@@ -266,6 +266,9 @@ if [ -f ~/.zsh_aliases ]; then
   . ~/.zsh_aliases
 fi
 
+# Aliases
+alias cme='crackmapexec'
+
 # Golang paths in bashrc
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
