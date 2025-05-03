@@ -1,0 +1,35 @@
+[Added Associations]
+application/pdf=firefox-3.desktop;firefox-2.desktop;chrome-2.desktop;chrome.desktop;
+application/x-extension-htm=zen-browser.desktop;firefox.desktop;
+application/x-extension-html=zen-browser.desktop;firefox.desktop;
+application/x-extension-shtml=zen-browser.desktop;firefox.desktop;
+application/x-extension-xht=zen-browser.desktop;firefox.desktop;
+application/x-extension-xhtml=zen-browser.desktop;firefox.desktop;
+application/xhtml+xml=zen-browser.desktop;firefox.desktop;
+image/png=gwenview.desktop;
+text/html=google-chrome.desktop;zen-browser.desktop;firefox.desktop;
+text/plain=nvim.desktop;
+x-scheme-handler/chrome=zen-browser.desktop;firefox.desktop;
+x-scheme-handler/http=google-chrome.desktop;zen-browser.desktop;firefox.desktop;
+x-scheme-handler/https=google-chrome.desktop;zen-browser.desktop;firefox.desktop;
+
+[Default Applications]
+application/pdf=firefox-3.desktop;
+application/x-extension-htm=firefox.desktop
+application/x-extension-html=firefox.desktop
+application/x-extension-shtml=firefox.desktop
+application/x-extension-xht=firefox.desktop
+application/x-extension-xhtml=firefox.desktop
+image/*=gwenview.desktop;
+inode/directory=dolphin.desktop
+text/markdown=nvim.desktop
+text/plain=nvim.desktop
+video/*=vlc.desktop
+video/quicktime=vlc.desktop
+video/x-matroska=vlc.desktop
+video/x-msvideo=vlc.desktop
+x-scheme-handler/chrome=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/obsidian=obsidian.desktop
+x-scheme-handler/terminal=kitty.desktop
