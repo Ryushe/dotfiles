@@ -7,7 +7,7 @@ elif [ "$distro" = "Ubuntu" ]; then
   install_command="apt install -y"
 fi
 
-blacklist=("ohmyposhthemes" "sddm" "scripts" "gammastep" "wallpapers" "kde") # add "" no comma for more
+blacklist=("images" "ohmyposhthemes" "sddm" "scripts" "gammastep" "wallpapers" "kde") # add "" no comma for more
 for d in $(ls .); do
   if [ -d $d ]; then
     if [[ ! "$(printf "%s\n" "${blacklist[@]}" | grep -Fx "$d")" ]]; then

@@ -179,6 +179,8 @@ export PATH="$PATH:/home/$USER/.local/bin"
 export PATH="$PATH:/snap/bin"
 # gem
 export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH"
+# fix ssh issues
+export TERM=xterm-256color
 
 # ohmyposh start theme
 eval "$(oh-my-posh init bash --config "~/dotfiles/ohmyposhthemes/kali.json")"
