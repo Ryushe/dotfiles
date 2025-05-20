@@ -182,9 +182,20 @@ export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH"
 # fix ssh issues
 export TERM=xterm-256color
 
+# source files/dirs if exist
+declare -A bashCommandWhitelist=(
+  ["ohmyposh"]="eval \"\$(oh-my-posh init bash --config ~/dotfiles/ohmyposhthemes/kali.json)\""
+  ["zoxide"]="eval \"\$(zoxide init bash)\""
+)
+
+for key in "${!bashCommandWhitelist[@]}"; do
+  command -v "$key" >/dev/null 2>&1 && eval "${bashCommandWhitelist[$key]}"
+done
+
+
 # ohmyposh start theme
-eval "$(oh-my-posh init bash --config "~/dotfiles/ohmyposhthemes/kali.json")"
+# eval "$(oh-my-posh init bash --config "~/dotfiles/ohmyposhthemes/kali.json")"
 #zoxide (cd replacement)
-eval "$(zoxide init bash)"
+#eval "$(zoxide init bash)"
 # wrap text
 COLUMNS=250
