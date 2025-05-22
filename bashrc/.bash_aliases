@@ -15,10 +15,14 @@ remove_ssh_identities() {
     echo "pass y to remove ssh-agents too"
   fi
 }
+
 alias obs="obs --disable-shutdown-check"
 #general
 alias logout="~/logout.sh"
 alias code_dir="cd /mnt/third_wheel/code"
+#obsidian vaults
+alias work="~/onedrive/obsidian/work"
+alias codex="~/onedrive/obsidian/codingXhacking/"
 # ssh
 alias git_c="connect_to_github"
 alias ssh_r="remove_ssh_identities"
