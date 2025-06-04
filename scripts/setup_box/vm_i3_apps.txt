@@ -1,4 +1,0 @@
-i3 # if on parrot use that
-picom
-tmux
-kitty
