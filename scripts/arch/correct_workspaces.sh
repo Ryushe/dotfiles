@@ -1,4 +1,5 @@
 #!/bin/sh
+source ~/dotfiles/scripts/utils/get_mons.sh
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 declare -A current_orientation
 declare -A correct_orientation
@@ -111,6 +112,14 @@ function get_space_gap() {
   fi
 }
 
+function move_mouse() { 
+  main_resolution=$(hyprctl monitors | grep -Eo '[0-9]{3,}x[0-9]{3,}@[^ ]+ at 0x0' | awk '{print $1}' | sed 's/@.*//')
+  IFS="x" read -r x y <<< "$main_resolution"
+  x=$(( x/2 ))
+  y=$(( y/2 ))
+  hyprctl dispatch movecursor $x $y
+}
+
 function main() {
   echo "Current:"
   get_current_orientation
@@ -123,9 +132,10 @@ function main() {
     ws="${current_orientation[$mon]}" # allows ws_range to not be overwritten
     if ! workspace_good $mon $ws; then
     move_workspace $ws $correct_ws
-    sleep 1
+    sleep .2
     get_current_orientation
     fi
+    move_mouse # moves to center of main mon
   done
 }
 
