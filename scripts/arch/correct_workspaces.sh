@@ -1,4 +1,5 @@
 #!/bin/sh
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 declare -A current_orientation
 declare -A correct_orientation
 
@@ -7,8 +8,9 @@ option=$1
 function show_help() {
   echo "Help menu:"
   echo "  -h | --help to show this menu"
+  echo "  -r | --run start the app"
   echo "  -c get current orinetation"
-  echo "  -o get correct orinetation"
+  echo "  -s | --check where the workspaces are"
   echo "  -e compare current to the correct config"
 }
 
@@ -67,10 +69,10 @@ function move_workspace() {
   local ws=$1
   local correct_ws=$2
   if (( $ws > $correct_ws )); then
-  ./swap_active_workspaces.sh l
+  $script_dir/swap_active_workspaces.sh l
   return
   fi
-  ./swap_active_workspaces.sh r
+  $script_dir/swap_active_workspaces.sh r
 }
 
 function is_in_array() {
