@@ -10,9 +10,10 @@ function show_help() {
   echo "Help menu:"
   echo "  -h | --help to show this menu"
   echo "  -r | --run start the app"
-  echo "  -c get current orinetation"
   echo "  -s | --check where the workspaces are"
+  echo "  -d | --dev work on the 'dev' branch"
   echo "  -e compare current to the correct config"
+  echo "  -c get current orinetation"
 }
 
 function get_current_orientation() {
@@ -39,20 +40,6 @@ ws_list=()
   echo
 }
 
-function check_workspace_locations() {
-  for mon in ${!current_orientation[@]}; do
-    correct_ws="${correct_orientation[$mon]}"
-    ws="${current_orientation[$mon]}" # allows ws_range to not be overwritten
-    get_range $correct_ws $space_gap # gets an array of the workspace range eg: 11-20 - uses ws
-    if ! is_in_array "$ws" "${range[@]}"; then 
-      echo "$mon is at $ws which is bad"
-      move_workspace
-    fi
-    echo "$mon is at $ws which is good"
-  done
-  echo
-}
-
 function workspace_good() {
   local mon=$1
   local ws=$2
@@ -66,7 +53,37 @@ function workspace_good() {
   return 0
 }
 
+function find_new_mon() {
+  #### takes the known ending location and converts it to a monitor
+  local ws=$1
+  get_space_gap &> /dev/null 
+  # instaed of this, need to check if its within the range of the workspace
+  for mon in "${!correct_orientation[@]}"; do
+    local correct_ws="${correct_orientation[$mon]}"
+     
+    get_range "$correct_ws" "$space_gap" &> /dev/null
+    if is_in_array "$ws" "${range[@]}"; then
+      echo $mon
+      return 0
+    fi
+    return 1
+  done
+}
+
 function move_workspace() {
+  ## finishing
+  local current_mon_name=$1
+  local ws=$2 
+  local correct_ws=$3
+  # ws instead of new, because we want to find the monitor that correlates with our current workspace 
+  echo "Finding mon for workspace $ws"
+  new_mon=$(find_new_mon $ws) 
+  echo moving $current_mon_name to $new_mon
+  hyprctl dispatch swapactiveworkspaces $current_mon_name $new_mon
+}
+
+
+function move_workspace_old() {
   local ws=$1
   local correct_ws=$2
   if (( $ws > $correct_ws )); then
@@ -131,9 +148,30 @@ function main() {
     local correct_ws="${correct_orientation[$mon]}"
     ws="${current_orientation[$mon]}" # allows ws_range to not be overwritten
     if ! workspace_good $mon $ws; then
-    move_workspace $ws $correct_ws
-    sleep .2
-    get_current_orientation
+      move_workspace $mon $ws $correct_ws # -- finish
+      sleep .2
+    fi
+    # move_mouse # moves to center of main mon
+  done
+}
+
+function dev() {
+  # no this isnt actually the dev branch (this was main, and its not really needed)
+  # diff: uses my ./swap_active_workspaces.sh instaed of a custom made fn
+  echo "Current:"
+  get_current_orientation
+  echo
+  echo "Correct:" 
+  get_correct_orientation
+  echo
+  for mon in ${!current_orientation[@]}; do
+    local correct_ws="${correct_orientation[$mon]}"
+    ws="${current_orientation[$mon]}" # allows ws_range to not be overwritten
+    if ! workspace_good $mon $ws; then
+      # move_workspace_new $mon $correct_ws # -- finish
+      move_workspace_old $ws $correct_ws
+      sleep .2
+      get_current_orientation
     fi
     move_mouse # moves to center of main mon
   done
@@ -145,6 +183,9 @@ case $1 in
     ;;
   --run | -r)
     main
+    ;;
+  --dev | -d)
+    dev
     ;;
   -e)
     echo "Current:"
