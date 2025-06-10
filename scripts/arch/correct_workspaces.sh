@@ -151,7 +151,7 @@ function main() {
       move_workspace $mon $ws $correct_ws # -- finish
       sleep .2
     fi
-    # move_mouse # moves to center of main mon
+    move_mouse # moves to center of main mon
   done
 }
 
