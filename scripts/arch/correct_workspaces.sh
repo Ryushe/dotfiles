@@ -37,7 +37,6 @@ ws_list=()
     ws="${correct_orientation[$mon]}"
     echo "Monitor=$mon, Range=$ws-$((ws + space_gap))"
   done
-  echo
 }
 
 function workspace_good() {
@@ -66,20 +65,19 @@ function find_new_mon() {
       echo $mon
       return 0
     fi
-    return 1
   done
+  return 1
 }
 
 function move_workspace() {
   ## finishing
   local current_mon_name=$1
   local ws=$2 
-  local correct_ws=$3
   # ws instead of new, because we want to find the monitor that correlates with our current workspace 
   echo "Finding mon for workspace $ws"
   new_mon=$(find_new_mon $ws) 
   echo moving $current_mon_name to $new_mon
-  hyprctl dispatch swapactiveworkspaces $current_mon_name $new_mon
+  hyprctl dispatch swapactiveworkspaces $current_mon_name $new_mon &> /dev/null
 }
 
 
@@ -144,17 +142,27 @@ function main() {
   echo "Correct:" 
   get_correct_orientation
   echo
-  for mon in ${!current_orientation[@]}; do
-    local correct_ws="${correct_orientation[$mon]}"
-    ws="${current_orientation[$mon]}" # allows ws_range to not be overwritten
-    if ! workspace_good $mon $ws; then
-      move_workspace $mon $ws $correct_ws # -- finish
-      sleep .2
-    fi
-    move_mouse # moves to center of main mon
+
+  local changed=1
+  while (( changed )); do
+    changed=0
+    for mon in "${!current_orientation[@]}"; do
+      local ws="${current_orientation[$mon]}"
+      if ! workspace_good "$mon" "$ws"; then
+        move_workspace "$mon" "$ws"
+        sleep 0.2
+        echo -e "\nCurrent:"
+        get_current_orientation  # refresh after move
+        echo
+        changed=1
+        break  # Exit for loop to re-check from start
+      fi
+    done
   done
+  move_mouse
 }
 
+#lowkey useless now
 function dev() {
   # no this isnt actually the dev branch (this was main, and its not really needed)
   # diff: uses my ./swap_active_workspaces.sh instaed of a custom made fn
