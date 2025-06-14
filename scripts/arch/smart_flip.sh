@@ -20,7 +20,7 @@ function flip() {
   elif [[ " ${vertical_mons[@]} " =~ " $current " ]] && [[ ! " ${vertical_mons[@]} " =~ " $new " ]]; then
     :
   else
-    echo "no vertical monitor found"
+    echo "Monitors don't need to be flipped"
     return 0
   fi
 

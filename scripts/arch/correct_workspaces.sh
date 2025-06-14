@@ -1,5 +1,6 @@
 #!/bin/sh
 source ~/dotfiles/scripts/utils/get_mons.sh
+source ~/dotfiles/scripts/arch/smart_flip.sh
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 declare -A current_orientation
 declare -A correct_orientation
@@ -162,27 +163,47 @@ function main() {
   move_mouse
 }
 
-#lowkey useless now
+# currently using - added ability to flip vertical and back
 function dev() {
-  # no this isnt actually the dev branch (this was main, and its not really needed)
-  # diff: uses my ./swap_active_workspaces.sh instaed of a custom made fn
   echo "Current:"
   get_current_orientation
   echo
   echo "Correct:" 
   get_correct_orientation
   echo
-  for mon in ${!current_orientation[@]}; do
-    local correct_ws="${correct_orientation[$mon]}"
-    ws="${current_orientation[$mon]}" # allows ws_range to not be overwritten
-    if ! workspace_good $mon $ws; then
-      # move_workspace_new $mon $correct_ws # -- finish
-      move_workspace_old $ws $correct_ws
-      sleep .2
-      get_current_orientation
-    fi
-    move_mouse # moves to center of main mon
+
+  local changed=1
+  while (( changed )); do
+    changed=0
+    for mon in "${!current_orientation[@]}"; do
+      local ws="${current_orientation[$mon]}"
+      if ! workspace_good "$mon" "$ws"; then
+        move_workspace "$mon" "$ws"
+        echo -e "\nFlip Workspace:"
+        correct_mon=$(find_new_mon $ws) 
+        flip $mon $correct_mon # comment out if don't want flip functionality -B2
+        sleep 0.2
+        echo -e "\nCurrent:"
+        get_current_orientation  # refresh after move
+        changed=1
+        break  # Exit for loop to re-check from start
+      fi
+    done
   done
+  move_mouse
+}
+
+function test() {
+  get_current_orientation
+  get_correct_orientation
+
+    for mon in "${!current_orientation[@]}"; do
+      local ws="${current_orientation[$mon]}"
+      correct_mon=$(find_new_mon $ws) 
+    echo
+    echo NEW:
+      echo current $mon correct $correct_mon
+    done
 }
 
 case $1 in 
@@ -211,6 +232,9 @@ case $1 in
     echo "Correct:" 
     get_correct_orientation
     check_workspace_locations
+    ;;
+  -t)
+    test 
     ;;
   *)
     show_help
