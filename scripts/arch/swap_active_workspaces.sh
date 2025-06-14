@@ -1,5 +1,6 @@
 #!/bin/bash
 source ~/dotfiles/scripts/utils/get_mons.sh
+source ~/dotfiles/scripts/arch/smart_flip.sh -f
 
 current_mon_id=$(hyprctl activewindow | grep -oP '(?<=monitor: )\d+')
 current_mon_name=$(hyprctl monitors | grep -A 1 "ID $current_mon_id" | grep "Monitor" | awk '{print $2}')
@@ -20,12 +21,16 @@ else
   echo "cant move monitor to nowhere... please give 'r' or 'l'"
 fi
 hyprctl dispatch swapactiveworkspaces $current_mon_name $new_mon
+flip $current_mon_name $new_mon # comment out to remove the flip functionailty
 echo moving $current_mon_name to $new_mon
 sleep .01
+
 # if left mon and moving left || right mon moving right
-if [[ $current_mon_name == $left_mon && $1 == "l" || $current_mon_name == $right_mon && $1 == "r" ]]; then
-  :
-else
-  echo "moving mouse to $main_mon"
-  hyprctl dispatch focusmonitor $main_mon
-fi
+
+# not sure why this is here
+# if [[ $current_mon_name == $left_mon && $1 == "l" || $current_mon_name == $right_mon && $1 == "r" ]]; then
+#   :
+# else
+#   echo "moving mouse to $main_mon"
+#   hyprctl dispatch focusmonitor $main_mon
+# fi
