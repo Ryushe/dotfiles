@@ -1,8 +1,13 @@
 # Dotfiles
-- ./setup.sh - curently handles installing req libs for my commonly used programs
+A current collection of all of my dotfiles. 
+
+NOTE: Navigate to the different subdirectories to learn more about them 
+
+- scripts/setup_box/install_apps.sh - curently handles installing req libs for my commonly used programs
   - eg: gcc, g++, oh-my-posh, tpm (tmux install plugin)
 - ./dotfiles.sh - creates symlinks using stow (really cool)
   - dotfiles has a blacklist to keep important dirs from being touched
+- ./setup_machine.sh - currently only installs grub theme
 
 ## File structure 
 Depending on the where the file needs to go:
@@ -13,14 +18,18 @@ Depending on the where the file needs to go:
 
 # How to use 
 1. `./removeoldsymlinks.sh`
+  - goes through a whitelist removing old config files that will cause issues with dotfiles in this repo (WARNING: deletes files & does not backup)
 1. `ln_dotfiles.sh`
-1. `install_apps` <- broken currently lol
-1. `source-file ~/.tmux.conf` <- from tmux ctrl+mod+:
-  - ctrl + r && ctrl + shift + i 
+  - links the dotfiles in this repo to the location they need to be (will not overwrite files)
+1. `scripts/setup_box/install_apps.sh` 
+  - installs commonly used apps
+1. `scripts/setup_box/install_tmux_tpm.sh` 
+  - installs plugin manager for tmux
 1. `oh-my-posh font install` <- right now kitty using hack
 
 ## Hyprland
-1. `./install_hyprland_apps.sh`
+1. `scripts/setup_box/install_hyprland_apps.sh`
+  - installs the apps for hyprland
 1. `ln_dotfiles` <- if havent already
 
 ## Krohnkite NOTES (tile manager)
