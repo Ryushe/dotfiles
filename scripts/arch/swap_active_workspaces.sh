@@ -1,6 +1,6 @@
 #!/bin/bash
 source ~/dotfiles/scripts/utils/get_mons.sh
-source ~/dotfiles/scripts/arch/smart_flip.sh -f
+source ~/dotfiles/scripts/arch/smart_flip.sh
 
 current_mon_id=$(hyprctl activewindow | grep -oP '(?<=monitor: )\d+')
 current_mon_name=$(hyprctl monitors | grep -A 1 "ID $current_mon_id" | grep "Monitor" | awk '{print $2}')

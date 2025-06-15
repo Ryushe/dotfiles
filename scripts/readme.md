@@ -29,6 +29,18 @@ Correct_workspaces.sh:
     - `bind = $mainMod, c, exec, $arch_scripts/swap_active_workspaces.sh r`
 <!-- eventually add the url from ryushe.sh of the uploaded video example -->
 
+Smart_flip.sh:  
+  - Makes vertical monitor windows stack, and horizontal be side by side when moved around to the other workspaces
+  - A script meant to be used with swap_active_workspaces.sh
+  - HOW TO ENABLE/DISABLE:
+    - swapping workspaces: comment out line 24 in swap_active_workspaces.sh (should say "flip ...")
+    - resetting workspaces: 
+      - enable: `bind = $mainMod, c, exec, $arch_scripts/correct_workspaces.sh -d` 
+      - disable: `bind = $mainMod, c, exec, $arch_scripts/correct_workspaces.sh -r` 
+  - checks if the hyprland monitor is vertical by viewing hyprland.conf
+  - if current monitor = horizontal && new monitor = vertical moves the 
+
+
 ## Hyprpapers
 This section handles all of my monitor wallpaper configs
 
