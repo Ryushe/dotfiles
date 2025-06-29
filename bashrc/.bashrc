@@ -172,6 +172,9 @@ export XMODIFIERS=@im=fcitx
 # WAYLAND SPECIFIC
 export MOZ_ENABLE_WAYLAND=1
 
+# My vars
+export MAIN_MONITOR="DP-2"
+
 # Created by `pipx` on 2023-10-24 07:27:09
 export PATH="$PATH:/home/$USER/.local/bin"
 
@@ -191,7 +194,6 @@ declare -A bashCommandWhitelist=(
 for key in "${!bashCommandWhitelist[@]}"; do
   command -v "$key" >/dev/null 2>&1 && eval "${bashCommandWhitelist[$key]}"
 done
-
 
 # ohmyposh start theme
 # eval "$(oh-my-posh init bash --config "~/dotfiles/ohmyposhthemes/kali.json")"

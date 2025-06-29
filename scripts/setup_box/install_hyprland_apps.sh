@@ -34,7 +34,11 @@ apps=(
 )
 sudo pacman -S "${apps[@]}"
 
-yay_apps=("hyprsome" "hyprtheme")
+yay_apps=(
+  "hyprsome"
+  "hyprtheme"
+  "caelestia-shell-git"
+)
 for app in "${yay_apps[@]}"; do
   yay -S $app
 done
