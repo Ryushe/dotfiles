@@ -35,3 +35,7 @@ vim.opt.tabstop = 4
 
 -- Enable syntax highlighting
 vim.cmd("syntax enable")
+
+-- lsp configs
+vim.lsp.enable("bashls")
+vim.lsp.enable("pyright")
