@@ -1,7 +1,8 @@
 # Custom functions
-connect_to_github() {
+add_ssh() {
+  path=$1
   eval $(ssh-agent)
-  ssh-add -t 5000 ~/.ssh/github
+  ssh-add -t 5000 $path
 
 }
 
@@ -15,6 +16,8 @@ remove_ssh_identities() {
     echo "pass y to remove ssh-agents too"
   fi
 }
+git_path="~/.ssh/github"
+aur_path="~/.ssh/aur"
 
 alias obs="obs --disable-shutdown-check"
 #general
@@ -24,16 +27,11 @@ alias code_dir="cd /mnt/third_wheel/code"
 alias work="~/onedrive/obsidian/work"
 alias codex="~/onedrive/obsidian/codingXhacking/"
 # ssh
-alias git_c="connect_to_github"
+alias git_c="add_ssh $git_path"
+alias git_aur="add_ssh $aur_path"
 alias ssh_r="remove_ssh_identities"
-# ai
-alias bbox="tgpt --provider blackboxai"
-alias claude="tgpt --provider duckduckgo --model claude-3-haiku-20240307"
-alias llama="tgpt --provider groq --model llama3-70b-8192 --key $GROQ_API_KEY"
-alias godmode="godmode >/dev/null 2>&1 &"
-## blog
-alias blog="~/scripts/open_apps/blog/blog.sh"
 # app opener
+alias blog="~/scripts/open_apps/blog/blog.sh"
 alias jobbie="~/scripts/open_apps/jobbie/jobbie.sh"
 alias ai_images='~/scripts/open_apps/open_apps.sh ~/scripts/open_apps/ai_images/ai_images.conf'
 alias japaneese='~/scripts/open_apps/open_apps.sh ~/scripts/open_apps/japaneese/japaneese.conf'
