@@ -5,6 +5,17 @@ This place houses all of my scripts that relate to my dotfiles.
 
 Want more scripts? Check out [here](https://github.com/Ryushe/scripts/)
 
+## Arch
+clear_cache: clears all of arch's cashe
+
+mouse_lock: util to lock mouse for games
+
+toggle_nerd_dictation: enable speech to text
+
+mullvad_change_location: change mullvad location
+- usage: `mullvad_change_location.sh seattle`
+  - NOTE: can put any location (eg: japan, osaka, germany, etc)
+
 ## Hyprpapers
 This section handles all of my monitor wallpaper configs
 
