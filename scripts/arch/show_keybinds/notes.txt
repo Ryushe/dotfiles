@@ -1,0 +1,4 @@
+got scripts from:
+https://github.com/end-4/dots-hyprland/blob/85a522ba14998a5641c776a154c11f1e69400e6b/.config/quickshell/ii/services/HyprlandKeybinds.qml#L4
+https://github.com/end-4/dots-hyprland/blob/85a522ba14998a5641c776a154c11f1e69400e6b/.config/quickshell/ii/scripts/hyprland/get_keybinds.py
+https://github.com/end-4/dots-hyprland/blob/85a522ba14998a5641c776a154c11f1e69400e6b/.config/quickshell/ii/modules/cheatsheet/CheatsheetKeybinds.qml#L4
