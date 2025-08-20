@@ -188,7 +188,7 @@ export TERM=xterm-256color
 # source files/dirs if exist
 declare -A bashCommandWhitelist=(
   ["ohmyposh"]="eval \"\$(oh-my-posh init bash --config ~/dotfiles/ohmyposhthemes/kali.json)\""
-  ["zoxide"]="eval \"\$(zoxide init bash)\""
+  ["zoxide"]="eval \"\$(zoxide init --cmd cd bash)\""
 )
 
 for key in "${!bashCommandWhitelist[@]}"; do

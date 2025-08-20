@@ -19,6 +19,8 @@ remove_ssh_identities() {
 git_path="~/.ssh/github"
 aur_path="~/.ssh/aur"
 
+alias icat="kitten icat"
+
 alias obs="obs --disable-shutdown-check"
 #general
 alias logout="~/logout.sh"
