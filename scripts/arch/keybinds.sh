@@ -1,5 +1,4 @@
 #!/bin/bash
-
 HYPR_CONF="$HOME/.config/hypr/keybinds.conf"
 
 if [ -z $ROFI_THEME ]; then
@@ -40,7 +39,11 @@ mapfile -t BINDINGS < <(
 CHOICE=$(printf '%s\n' "${BINDINGS[@]}" | rofi -dmenu -i -markup-rows -theme $ROFI_THEME -p "Hyprland Keybinds:")
 
 # extract cmd from span <span color='gray'>cmd</span>
-CMD=$(echo "$CHOICE" | sed -n 's/.*<span color='\''gray'\''>\(.*\)<\/span>.*/\1/p')
+# CMD=$(echo "$CHOICE" | sed -n 's/.*<span color='\''gray'\''>\(.*\)<\/span>.*/\1/p')
+CMD=$(echo "$CHOICE" | sed -n "s/.*<i>\(.*\)<\/i>.*/\1/p")
+echo $CMD
+
+echo $CHOICE
 
 # execute it if first word is exec else use hyprctl dispatch
 if [[ $CMD == exec* ]]; then
