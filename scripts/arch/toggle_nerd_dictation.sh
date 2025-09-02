@@ -43,7 +43,9 @@ check_command dotool
 if is_running "nerd-dictation begin"; then
   echo "ending nerd-dictation"
   nerd-dictation end
+  notify-send "Stopping Nerd Dictation"
 else
   echo "starting nerd-dictation"
+  notify-send "Starting Nerd Dictation"
   nerd-dictation begin --simulate-input-tool=DOTOOL
 fi

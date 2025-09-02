@@ -142,9 +142,17 @@ alias l='ls -CF'
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
+bashrc_files=(".bash_aliases" ".bash_env")
+
+for file in "${bashrc_files[@]}"; do
+  if [ -f $HOME/$file ]; then
+    . $HOME/$file
+  fi
+done
+
+# if [ -f ~/.bash_aliases ]; then
+#   . ~/.bash_aliases
+# fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -156,34 +164,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-# Golang paths in bashrc
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-export PATH="$PATH:/opt/nvim/"
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:/opt/urldedupe/
-
-#language envs
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-
-# WAYLAND SPECIFIC
-export MOZ_ENABLE_WAYLAND=1
-
-# My vars
-export MAIN_MONITOR="DP-2"
-
-# Created by `pipx` on 2023-10-24 07:27:09
-export PATH="$PATH:/home/$USER/.local/bin"
-
-# snap path
-export PATH="$PATH:/snap/bin"
-# gem
-export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH"
-# fix ssh issues
-export TERM=xterm-256color
 
 # source files/dirs if exist
 declare -A bashCommandWhitelist=(

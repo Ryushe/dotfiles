@@ -1,0 +1,32 @@
+# where I plan on keeping my global variables
+
+#mine:
+export MAIN_MONITOR="DP-2"
+export ROFI_THEME="$HOME/.config/rofi/launchers/type-2/style-2.rasi"
+
+# Golang paths in bashrc
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export PATH="$PATH:/opt/nvim/"
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/opt/urldedupe/
+
+#language envs
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+# WAYLAND SPECIFIC
+export MOZ_ENABLE_WAYLAND=1
+
+# Created by `pipx` on 2023-10-24 07:27:09
+export PATH="$PATH:/home/$USER/.local/bin"
+
+# snap path
+export PATH="$PATH:/snap/bin"
+# gem
+export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH"
+# fix ssh issues
+export TERM=xterm-256color
+

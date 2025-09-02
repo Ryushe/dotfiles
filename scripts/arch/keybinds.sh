@@ -1,7 +1,10 @@
 #!/bin/bash
 
 HYPR_CONF="$HOME/.config/hypr/keybinds.conf"
-THEME="$HOME/.config/rofi/launchers/type-2/style-2.rasi"
+
+if [ -z $ROFI_THEME ]; then
+  ROFI_THEME="$HOME/.config/rofi/launchers/type-2/style-2.rasi"
+fi
 
 # extract the keybinding from hyprland.conf
 # mapfile -t BINDINGS < <(
@@ -34,7 +37,7 @@ mapfile -t BINDINGS < <(
     done
 )
 
-CHOICE=$(printf '%s\n' "${BINDINGS[@]}" | rofi -dmenu -i -markup-rows -theme $THEME -p "Hyprland Keybinds:")
+CHOICE=$(printf '%s\n' "${BINDINGS[@]}" | rofi -dmenu -i -markup-rows -theme $ROFI_THEME -p "Hyprland Keybinds:")
 
 # extract cmd from span <span color='gray'>cmd</span>
 CMD=$(echo "$CHOICE" | sed -n 's/.*<span color='\''gray'\''>\(.*\)<\/span>.*/\1/p')
