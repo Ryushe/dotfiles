@@ -5,6 +5,11 @@
 # Match tmux's -c "#{pane_current_path}" behavior for new panes and tabs.
 new_cwd = "follow"
 
+[ui]
+# tmux-style pane presentation: no split outline or outer pane frame.
+pane_borders = "off"
+pane_outer_borders = false
+
 [keys]
 # tmux's prefix is Ctrl-b; Herdr keeps that default.
 # Use both tmux's prefix+hjkl and its no-prefix Alt+hjkl pane navigation.
