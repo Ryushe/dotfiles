@@ -12,9 +12,10 @@ focus_pane_down = ["prefix+j", "alt+j"]
 focus_pane_up = ["prefix+k", "alt+k"]
 focus_pane_right = ["prefix+l", "alt+l"]
 
-# Match tmux's prefix+r config reload.
-# Herdr's default is prefix+shift+r.
+# Match tmux's prefix+r config reload without dropping Herdr resize mode.
+# Herdr defaults: reload is prefix+shift+r and resize mode is prefix+r.
 reload_config = "prefix+r"
+resize_mode = "prefix+shift+r"
 
 # Match the requested tmux-style pane cycling keys.
 # This replaces Herdr's default prefix+n / prefix+p tab navigation.
@@ -26,5 +27,6 @@ cycle_pane_previous = "prefix+p"
 # Match tmux split keys while keeping Herdr's direction naming explicit.
 # tmux prefix+" creates a stacked split; Herdr calls that horizontal.
 # tmux prefix+% creates a side-by-side split; Herdr calls that vertical.
-split_horizontal = "prefix+double_quote"
-split_vertical = "prefix+percent"
+# Keep Herdr's old split aliases too: prefix+minus for stacked and prefix+v for side-by-side.
+split_horizontal = ["prefix+double_quote", "prefix+minus"]
+split_vertical = ["prefix+percent", "prefix+v"]
