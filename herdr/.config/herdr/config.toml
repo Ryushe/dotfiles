@@ -1,32 +1,57 @@
-# Herdr keybindings that mirror the tmux workflow in tmux/.tmux.conf.
-# This file is installed at ~/.config/herdr/config.toml by ./ln_dotfiles.sh.
+# Herdr keybindings that mirror Ryushe's tmux workflow.
+# Installed at ~/.config/herdr/config.toml by ./ln_dotfiles.sh.
 
 [terminal]
 # Match tmux's -c "#{pane_current_path}" behavior for new panes and tabs.
 new_cwd = "follow"
 
+[ui]
+# tmux-style pane presentation: no split outline or outer pane frame.
+pane_borders = "off"
+pane_outer_borders = false
+
 [keys]
-# Keep Herdr's prefix+hjkl pane navigation and add tmux's no-prefix Alt+hjkl.
+# tmux's prefix is Ctrl-b; Herdr keeps that default.
+# Use both tmux's prefix+hjkl and its no-prefix Alt+hjkl pane navigation.
 focus_pane_left = ["prefix+h", "alt+h"]
 focus_pane_down = ["prefix+j", "alt+j"]
 focus_pane_up = ["prefix+k", "alt+k"]
 focus_pane_right = ["prefix+l", "alt+l"]
 
+# tmux-style session, workspace, and client navigation.
+# Herdr's settings move aside to free prefix+s for the session navigator.
+settings = "prefix+shift+s"
+goto = ["prefix+s", "prefix+g"]
+workspace_picker = "prefix+w"
+previous_workspace = "prefix+("
+next_workspace = "prefix+)"
+
+# tmux-style detach. The displaced close-workspace action moves to a distinct key.
+detach = "prefix+d"
+close_workspace = "prefix+shift+backspace"
+
 # Match tmux's prefix+r config reload without dropping Herdr resize mode.
-# Herdr defaults: reload is prefix+shift+r and resize mode is prefix+r.
 reload_config = "prefix+r"
 resize_mode = "prefix+shift+r"
 
-# Match the requested tmux-style pane cycling keys.
-# This replaces Herdr's default prefix+n / prefix+p tab navigation.
-next_tab = ""
-previous_tab = ""
-cycle_pane_next = "prefix+n"
-cycle_pane_previous = "prefix+p"
+# Use Herdr's original next/previous-tab keys. Pane cycling stays on Herdr's
+# Ctrl-b Tab / Ctrl-b Shift+Tab defaults, and Ctrl-b ; selects the last pane.
+next_tab = "prefix+n"
+previous_tab = "prefix+p"
+cycle_pane_next = "prefix+tab"
+cycle_pane_previous = "prefix+shift+tab"
+last_pane = "prefix+semicolon"
 
-# Match tmux split keys while keeping Herdr's direction naming explicit.
-# tmux prefix+" creates a stacked split; Herdr calls that horizontal.
-# tmux prefix+% creates a side-by-side split; Herdr calls that vertical.
-# Keep Herdr's old split aliases too: prefix+minus for stacked and prefix+v for side-by-side.
-split_horizontal = ["prefix+double_quote", "prefix+minus"]
-split_vertical = ["prefix+percent", "prefix+v"]
+# Herdr tabs are tmux's closest window equivalent. Use Ryushe's preferred
+# prefix+. rename shortcut and tmux's standard prefix+, alias.
+rename_tab = ["prefix+period", "prefix+comma"]
+
+# tmux split keys. Herdr names a stacked split horizontal and side-by-side vertical.
+split_horizontal = "prefix+double_quote"
+split_vertical = "prefix+percent"
+
+# Other directly transferable tmux defaults.
+new_tab = "prefix+c"
+close_tab = "prefix+ampersand"
+copy_mode = "prefix+["
+zoom = "prefix+z"
