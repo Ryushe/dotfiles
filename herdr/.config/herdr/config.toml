@@ -1,0 +1,32 @@
+# Herdr keybindings that mirror the tmux workflow in tmux/.tmux.conf.
+# This file is installed at ~/.config/herdr/config.toml by ./ln_dotfiles.sh.
+
+[terminal]
+# Match tmux's -c "#{pane_current_path}" behavior for new panes and tabs.
+new_cwd = "follow"
+
+[keys]
+# Keep Herdr's prefix+hjkl pane navigation and add tmux's no-prefix Alt+hjkl.
+focus_pane_left = ["prefix+h", "alt+h"]
+focus_pane_down = ["prefix+j", "alt+j"]
+focus_pane_up = ["prefix+k", "alt+k"]
+focus_pane_right = ["prefix+l", "alt+l"]
+
+# Match tmux's prefix+r config reload without dropping Herdr resize mode.
+# Herdr defaults: reload is prefix+shift+r and resize mode is prefix+r.
+reload_config = "prefix+r"
+resize_mode = "prefix+shift+r"
+
+# Match the requested tmux-style pane cycling keys.
+# This replaces Herdr's default prefix+n / prefix+p tab navigation.
+next_tab = ""
+previous_tab = ""
+cycle_pane_next = "prefix+n"
+cycle_pane_previous = "prefix+p"
+
+# Match tmux split keys while keeping Herdr's direction naming explicit.
+# tmux prefix+" creates a stacked split; Herdr calls that horizontal.
+# tmux prefix+% creates a side-by-side split; Herdr calls that vertical.
+# Keep Herdr's old split aliases too: prefix+minus for stacked and prefix+v for side-by-side.
+split_horizontal = ["prefix+double_quote", "prefix+minus"]
+split_vertical = ["prefix+percent", "prefix+v"]
