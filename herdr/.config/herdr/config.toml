@@ -6,8 +6,8 @@
 new_cwd = "follow"
 
 [ui]
-# tmux-style pane presentation: no split outline or outer pane frame.
-pane_borders = "off"
+# Draw dividers for split panes, but keep the outside pane frame removed.
+pane_borders = "auto"
 pane_outer_borders = false
 
 [keys]
