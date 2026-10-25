@@ -27,7 +27,6 @@ alias logout="~/logout.sh"
 alias code_dir="cd /mnt/third_wheel/code"
 #obsidian vaults
 alias work="~/onedrive/obsidian/work"
-alias codex="~/onedrive/obsidian/codingXhacking/"
 # ssh
 alias git_c="add_ssh $git_path"
 alias git_aur="add_ssh $aur_path"
@@ -44,3 +43,6 @@ alias bounty='~/scripts/open_apps/open_apps.sh ~/scripts/open_apps/bounty/bounty
 alias htb2='~/scripts/open_apps/open_apps.sh ~/scripts/open_apps/htb2/htb2.conf'
 alias bnty='/home/ryushe/scripts/open_apps/open_apps.sh /home/ryushe/scripts/open_apps/bnty/bnty.conf'
 alias ai_content='/home/ryushe/scripts/open_apps/open_apps.sh /home/ryushe/scripts/open_apps/ai_content/ai_content.conf'
+alias colemak='sudo ln -sf /etc/keyd/colemak.conf /etc/keyd/default.conf && sudo systemctl restart keyd'
+
+alias qwerty='sudo ln -sf /etc/keyd/qwerty.conf /etc/keyd/default.conf && sudo systemctl restart keyd'
