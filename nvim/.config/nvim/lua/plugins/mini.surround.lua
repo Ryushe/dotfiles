@@ -1,4 +1,4 @@
--- https://github.com/echasnovski/mini.surround
+-- https://github.com/nvim-mini/mini.surround
 return {
-  { "echasnovski/mini.surround", version = false },
+  { "nvim-mini/mini.surround", version = false },
 }
