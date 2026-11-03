@@ -1,3 +1,4 @@
+onboarding = false
 # Herdr keybindings that mirror Ryushe's tmux workflow.
 # Installed at ~/.config/herdr/config.toml by ./ln_dotfiles.sh.
 
