@@ -43,6 +43,5 @@ alias bounty='~/scripts/open_apps/open_apps.sh ~/scripts/open_apps/bounty/bounty
 alias htb2='~/scripts/open_apps/open_apps.sh ~/scripts/open_apps/htb2/htb2.conf'
 alias bnty='/home/ryushe/scripts/open_apps/open_apps.sh /home/ryushe/scripts/open_apps/bnty/bnty.conf'
 alias ai_content='/home/ryushe/scripts/open_apps/open_apps.sh /home/ryushe/scripts/open_apps/ai_content/ai_content.conf'
-alias colemak='sudo ln -sf /etc/keyd/colemak.conf /etc/keyd/default.conf && sudo systemctl restart keyd'
-
-alias qwerty='sudo ln -sf /etc/keyd/qwerty.conf /etc/keyd/default.conf && sudo systemctl restart keyd'
+alias claude_t='claude --channels plugin:telegram@claude-plugins-official'
+alias glm_t='claude-glm --channels plugin:telegram@claude-plugins-official'

@@ -1,4 +1,5 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
+#
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -183,8 +184,32 @@ done
 COLUMNS=250
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Add user-local tools installed by Ghost/OpenClaw.
+case ":$PATH:" in
+*:"$HOME/.local/bin":*) ;;
+*) export PATH="$HOME/.local/bin:$PATH" ;;
+esac
+
+# Add user-local recon tooling paths.
+case ":$PATH:" in
+*:"$HOME/.local/bin":*) ;;
+*) export PATH="$HOME/.local/bin:$PATH" ;;
+esac
+case ":$PATH:" in
+*:"$HOME/go/bin":*) ;;
+*) export PATH="$HOME/go/bin:$PATH" ;;
+esac
 
 # opencode
 export PATH=/home/ryushe/.opencode/bin:$PATH
+
+# >>> Codex installer >>>
+export PATH="/home/ryushe/.local/bin:$PATH"
+# <<< Codex installer <<<
+export OLLAMA_MODELS=/mnt/bounty/models
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
