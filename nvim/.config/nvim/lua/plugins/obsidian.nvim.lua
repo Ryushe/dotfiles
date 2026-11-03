@@ -1,4 +1,29 @@
 -- https://github.com/epwalsh/obsidian.nvim
+-- obsidian.nvim resolves every configured workspace at setup and hard-errors
+-- when a path is missing, and it also requires at least one workspace. The
+-- vault drive (/mnt/third_wheel) is not always mounted, so keep only the
+-- vaults that currently exist and fall back to a scratch vault.
+local vault_workspaces = {
+  {
+    name = "codingXhacking",
+    path = "/mnt/third_wheel/obsidian_vaults/codingXhacking/",
+  },
+  {
+    name = "job search",
+    path = "/mnt/third_wheel/obsidian_vaults/jobs/",
+  },
+}
+
+local workspaces = vim.tbl_filter(function(ws)
+  return vim.uv.fs_stat(ws.path) ~= nil
+end, vault_workspaces)
+
+if vim.tbl_isempty(workspaces) then
+  local scratch = vim.fn.stdpath("data") .. "/obsidian-scratch"
+  vim.fn.mkdir(scratch, "p")
+  table.insert(workspaces, { name = "scratch", path = scratch })
+end
+
 return {
   "epwalsh/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit
@@ -19,16 +44,7 @@ return {
     -- see below for full list of optional dependencies 👇
   },
   opts = {
-    workspaces = {
-      {
-        name = "codingXhacking",
-        path = "/mnt/third_wheel/obsidian_vaults/codingXhacking/",
-      },
-      {
-        name = "job search",
-        path = "/mnt/third_wheel/obsidian_vaults/jobs/",
-      },
-    },
+    workspaces = workspaces,
   },
 
   -- optional
